@@ -2,8 +2,13 @@ export default {
     props:['tempProduct','addProduct','qty'],
     data(){
         return{
-
+          NewQty:1,
         }
+    },
+    watch:{
+      tempProduct(){
+        this.NewQty = this.qty;
+      }
     },
     template:`<div class="modal-dialog modal-xl">
     <div class="modal-content">
@@ -44,8 +49,8 @@ export default {
               <div class="col-6">
                 <div class="input-group text-end mt-5">
                   <input type="number" min="0" class="form-control w-50"
-                  v-model="qty">
-                  <button class="btn btn-primary" type="button" @click="addProduct(tempProduct,qty)">
+                  v-model="NewQty">
+                  <button class="btn btn-primary" type="button" @click="addProduct(tempProduct,NewQty)">
                     加入購物車
                   </button>
                 </div>

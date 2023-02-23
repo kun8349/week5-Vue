@@ -84,7 +84,7 @@
                     <td>
                       <div class="input-group w-50">
                         <input type="number" min="0" class="form-control"
-                        v-model="cartProduct.qty" @click="editNum(cartProduct)" :disabled="loadingItem === cartProduct.id">
+                        v-model="cartProduct.qty" @change="editNum(cartProduct)" :disabled="loadingItem === cartProduct.id">
                         <span class="input-group-text">
                           {{ cartProduct.product.unit }}
                         </span>

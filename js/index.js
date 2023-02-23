@@ -132,6 +132,16 @@ const app = createApp({
             axios.post(`${url}api/${path}/order`,{data:this.form})
                 .then(res=>{
                     this.loading();
+                    this.form ={
+                        user: {
+                          name: '',
+                          email: '',
+                          tel: '',
+                          address: '',
+                        },
+                        message: '',
+                    };
+                    this.getCartList();
                 })
                 .catch(err=>{
                     alert(err.response.data.message);
